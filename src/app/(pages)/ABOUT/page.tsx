@@ -1,4 +1,4 @@
-import HomeMenuButtons from "./Components/HomeMenuButtons";
+import HomeMenuButtons from "@/app/Components/HomeMenuButtons";
 
 export default function Home()
 {
