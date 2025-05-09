@@ -3,7 +3,7 @@
 import MeAndSteph2 from "/public/assets/MeAndSteph2.jpg"
 import Image from "next/image";
 
-export default function Home()
+export default function Contact()
 {
   return (
     // Surrounding Div START

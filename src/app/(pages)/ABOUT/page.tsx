@@ -1,7 +1,5 @@
-export default function Home()
+export default function About()
 {
-  const buttonArray = ["ENTER", "ABOUT", "CONTACT", "REPOSITORY"];
-
   return (
     // Surrounding Div START
     <div className="h-[100vh] pt-[50px] bg-gray-950 text-white  flex flex-col justify-center items-center font-[CalSans] inset-shadow-[0_0_5rem_0.1em_rgba(30,30,30,1)]">
