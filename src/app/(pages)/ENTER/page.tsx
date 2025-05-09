@@ -1,12 +1,10 @@
-import HomeMenuButtons from "@/app/Components/HomeMenuButtons";
-
 export default function Home()
 {
   const buttonArray = ["ENTER", "ABOUT", "CONTACT", "REPOSITORY"];
 
   return (
     // Surrounding Div START
-    <div className="h-[100vh] bg-gray-950 text-white  flex flex-col justify-center items-center font-[CalSans] inset-shadow-[0_0_5rem_0.1em_rgba(30,30,30,1)]">
+    <div className="h-[100vh] pt-[50px] bg-gray-950 text-white  flex flex-col justify-center items-center font-[CalSans] inset-shadow-[0_0_5rem_0.1em_rgba(30,30,30,1)]">
 
       <div className="text-start w-full">
         <p className="ml-[7%]">191621529884337911328</p>
@@ -69,16 +67,9 @@ export default function Home()
 
         <div className="col-start-1 row-start-1 w-[95%] h-full">
           {/* Home Page START */}
-          <div className="flex flex-col h-full justify-center">
+          <div className="flex flex-col h-full justify-center items-center">
 
-            {/* Home navigation buttons */}
-            {
-              buttonArray.map((buttonName, index) =>
-              (
-                <HomeMenuButtons key={index} buttonName={buttonName}/>
-              ))
-            }
-            {/* Home navigation buttons */}
+            <p className="text-lg">In Progress</p>
 
           </div>
           {/* Home Page END */}

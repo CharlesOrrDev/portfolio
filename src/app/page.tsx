@@ -6,7 +6,7 @@ export default function Home()
 
   return (
     // Surrounding Div START
-    <div className="h-[100vh] bg-gray-950 text-white  flex flex-col justify-center items-center font-[CalSans] inset-shadow-[0_0_5rem_0.1em_rgba(30,30,30,1)]">
+    <div className="h-[100vh] bg-gray-950 text-white flex flex-col justify-center items-center font-[CalSans] inset-shadow-[0_0_5rem_0.1em_rgba(30,30,30,1)]">
 
       <div className="text-start w-full">
         <p className="ml-[7%]">191621529884337911328</p>

@@ -28,7 +28,7 @@ const HomeMenuButtons = ({buttonName}: Iprops) =>
         router.push(`/${buttonName}`);
       }
     }
-  },[isClicked])
+  },[isClicked, buttonName, router])
 
   return (
     <div className={`

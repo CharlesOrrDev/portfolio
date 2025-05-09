@@ -1,12 +1,13 @@
-import HomeMenuButtons from "@/app/Components/HomeMenuButtons";
+'use client'
+
+import MeAndSteph2 from "/public/assets/MeAndSteph2.jpg"
+import Image from "next/image";
 
 export default function Home()
 {
-  const buttonArray = ["ENTER", "ABOUT", "CONTACT", "REPOSITORY"];
-
   return (
     // Surrounding Div START
-    <div className="h-[100vh] bg-gray-950 text-white  flex flex-col justify-center items-center font-[CalSans] inset-shadow-[0_0_5rem_0.1em_rgba(30,30,30,1)]">
+    <div className="h-[100vh] pt-[50px] bg-gray-950 text-white  flex flex-col justify-center items-center font-[CalSans] inset-shadow-[0_0_5rem_0.1em_rgba(30,30,30,1)]">
 
       <div className="text-start w-full">
         <p className="ml-[7%]">191621529884337911328</p>
@@ -14,6 +15,7 @@ export default function Home()
 
 
       <div className="grid w-[88%] h-[80%]">
+
         <div className="col-start-1 row-start-1 grid">
 
           {/* Column One START */}
@@ -67,22 +69,63 @@ export default function Home()
         </div>
 
 
-        <div className="col-start-1 row-start-1 w-[95%] h-full">
-          {/* Home Page START */}
-          <div className="flex flex-col h-full justify-center">
+        <div className="col-start-1 row-start-1 flex justify-center items-center">
+          <div className="bg-gray-900 w-[99.95%] h-[99.7%] inset-shadow-[0_0_3rem_0.1em_rgba(35,35,35,1)]"></div>
+        </div>
 
-            {/* Home navigation buttons */}
-            {
-              buttonArray.map((buttonName, index) =>
-              (
-                <HomeMenuButtons key={index} buttonName={buttonName}/>
-              ))
-            }
-            {/* Home navigation buttons */}
+
+        <div className="col-start-1 row-start-1 w-[80%] h-[68%] m-auto">
+          {/* Contact Page START */}
+          <div className="grid h-full justify-between">
+            
+
+            {/* Personal Section */}
+            <div className="row-start-1 col-start-1 grid">
+              <div className="">
+                <Image src={MeAndSteph2} alt="Me and my wife" width={200} height={200} style={{objectFit: "cover"}} className="rounded-full h-[200px]"/>
+              </div>
+
+              <div className="text-2xl">
+                <p>Charles Orr</p>
+              </div>
+
+              <div className="flex">
+                <p className="mr-[10px] text-2xl">Email :</p>
+                <p className="text-xl mt-[4px]">Chas2687@gmail.com</p>
+              </div>
+
+              <div className="flex">
+                <p className="mr-[10px] text-2xl">Phone :</p>
+                <p className="text-xl mt-[4px]">(209)-482-6484</p>
+              </div>
+            </div>
+            {/* Personal Section */}
+
+
+            {/* Outside Links */}
+            <div className="row-start-1 col-start-2 items-center">
+              <div className="flex mb-[30px]">
+                <p className="mr-[10px] text-2xl">LinkedIn :</p>
+                <button onClick={() => window.open("https://www.linkedin.com/in/charles-orr-62a623358/")} className="text-xl mt-[4px] cursor-pointer">https://www.linkedin.com/in/charles-orr-62a623358/</button>
+              </div>
+
+              <div className="flex mb-[30px]">
+                <p className="mr-[10px] text-2xl">GitHub :</p>
+                <button onClick={() => window.open("https://github.com/CharlesOrrDev")} className="text-xl mt-[4px] cursor-pointer">https://github.com/CharlesOrrDev</button>
+              </div>
+
+              <div className="flex">
+                <p className="mr-[10px] text-2xl">Resume :</p>
+                <button className="text-xl mt-[4px] cursor-pointer"><a href="/assets/CharlesOrrResume.pdf" download="CharlesOrrResume.pdf">CharlesOrrResume.pdf</a></button>
+              </div>
+            </div>
+            {/* Outside Links */}
+
 
           </div>
-          {/* Home Page END */}
+          {/* Contact Page END */}
         </div>
+
       </div>
 
 
