@@ -1,5 +1,6 @@
 'use client'
 
+import projectsSvg from '/public/assets/projects.svg'
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react'
 import MouseFollowEffect from './MouseFollowEffect';
@@ -79,7 +80,10 @@ const ApplicationButton = () =>
                 ${hoveringProjects ? "bg-[radial-gradient(circle_at_center,_oklch(72.3%_0.219_149.579)_0%,_#032e15_100%)]" : "bg-[radial-gradient(circle_at_center,_#ffffff_0%,_#030712_100%)]"}
               `}
             />
-            <p className="z-50 absolute w-full">PROJECTS</p>
+            <div className="z-50 absolute w-full flex justify-center items-center flex-col">
+              <img className="w-[100px] h-[100px]" src={projectsSvg} alt="" />
+              <p className="">PROJECTS</p>
+            </div>
           </button>
 
           <button
