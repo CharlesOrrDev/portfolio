@@ -73,7 +73,7 @@ const EnterButton = () =>
         ENTER
       </button>
 
-      <MouseFollowEffect mousePos={mousePos} isHovering={isHovering} windowDimensions={windowDimensions} hoveringEnter={hoveringEnter} hoveringProjects={false} hoveringAbout={false} hoveringContact={false} hoveringRepo={false} />
+      <MouseFollowEffect mousePos={mousePos} isHovering={isHovering} windowDimensions={windowDimensions} hoveringEnter={hoveringEnter} hoveringButton={false} />
 
     </div>
     </div>
