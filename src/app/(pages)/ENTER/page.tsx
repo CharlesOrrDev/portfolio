@@ -1,101 +1,105 @@
-import ApplicationButton from "@/app/Components/ApplicationButton";
-import MainMenuGrid from "@/app/Components/MainMenuGrid";
+'use client'
+
+import HomeMenuButtons from '@/app/Components/HomeMenuButtons';
+import MouseFollowEffect from '@/app/Components/MouseFollowEffect';
+import { useRouter } from 'next/navigation';
+import React, { useEffect, useRef, useState } from 'react'
 
 export default function Home()
 {
+  const router = useRouter();
+
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const [windowDimensions, setWindowDimensions] = useState({ width: 0, height: 0 });
+  const divRef = useRef<HTMLDivElement>(null);
+
+  const [hoveringButton, setHoveringButton] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) =>
+  {
+    if (divRef.current)
+    {
+      const rect = divRef.current.getBoundingClientRect();
+      setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    }
+  }
+
+  const handleMouseEnter = () =>
+  {
+    setIsHovering(true);
+  }
+
+  const handleMouseLeave = () =>
+  {
+    setIsHovering(false);
+  }
+
+  useEffect(() =>
+  {
+    if (typeof window === "undefined") return;
+  
+    const updateWindowDimensions = () =>
+    {
+      setWindowDimensions({width: window.innerWidth, height: window.innerHeight});
+    }
+  
+    updateWindowDimensions();
+  
+    window.addEventListener("resize", updateWindowDimensions);
+  
+    return () =>
+    {
+      window.removeEventListener("resize", updateWindowDimensions);
+    }
+  },[])
+
   return (
-    <div className="h-[100vh] bg-gray-950 text-white flex flex-col justify-center items-center font-[CalSans] inset-shadow-[0_0_5rem_0.1em_rgba(30,30,30,1)]">
-
-      <div className="text-start w-full">
-        <p className="ml-[7%]">191621529884337911328</p>
-      </div>
-
-
-      <div className="grid w-[88%] h-[80%]">
-        <div className="col-start-1 row-start-1 grid">
-
-          {/* Column One START */}
-          <div className="col-start-1 row-start-1 flex justify-start items-start">
-            <div className="bg-gradient-to-tl from-white via-gray-700 to-white w-[95%] h-[90%] rounded-[10%] rounded-tl-[3px]"/>
-          </div>
-          
-          <div className="col-start-1 row-start-2 flex items-center">
-            <div className="bg-gradient-to-b from-gray-700 via-white to-gray-700 w-[95%] h-[90%] rounded-[10%]"/>
+    <div className="w-full h-full flex items-center justify-center">
+      <div
+        className="w-[99.5%] h-[99%] grid overflow-hidden relative cursor-none"
+        ref={divRef}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className="grid gap-[100px] justify-center items-center">
+          <div
+            className="col-start-1 row-start-1"
+            onMouseEnter={() => setHoveringButton(true)}
+            onMouseLeave={() => setHoveringButton(false)}
+          >
+            <HomeMenuButtons Type="PROJECTS" />
           </div>
 
-          <div className="col-start-1 row-start-3 flex justify-start items-end">
-            <div className="bg-gradient-to-bl from-white via-gray-700 to-white w-[95%] h-[90%] rounded-[10%] rounded-bl-[3px]"/>
-          </div>
-          {/* Column One END */}
-
-
-          {/* Column Two START */}
-          <div className="col-start-2 row-start-1 flex justify-center items-start">
-            <div className="bg-gradient-to-r from-gray-700 via-white to-gray-700 w-[95%] h-[90%] rounded-[10%]"/>
+          <div
+            className="col-start-2 row-start-1"
+            onMouseEnter={() => setHoveringButton(true)}
+            onMouseLeave={() => setHoveringButton(false)}
+          >
+            <HomeMenuButtons Type="ABOUT" />
           </div>
 
-          <div className="col-start-2 row-start-3 flex justify-center items-end">
-            <div className="bg-gradient-to-r from-gray-700 via-white to-gray-700 w-[95%] h-[90%] rounded-[10%]"/>
-          </div>
-          {/* Column Two END */}
-
-
-          {/* Column Three START */}
-          <div className="col-start-3 row-start-1 flex justify-end items-start">
-            <div className="bg-gradient-to-tr from-white via-gray-700 to-white w-[95%] h-[90%] rounded-[10%] rounded-tr-[3px]"/>
-          </div>
-          
-          <div className="col-start-3 row-start-2 flex justify-end items-center">
-            <div className="bg-gradient-to-b from-gray-700 via-white to-gray-700 w-[95%] h-[90%] rounded-[10%]"/>
+          <div
+            className="col-start-3 row-start-1"
+            onMouseEnter={() => setHoveringButton(true)}
+            onMouseLeave={() => setHoveringButton(false)}
+          >
+            <HomeMenuButtons Type="CONTACT" />
           </div>
 
-          <div className="col-start-3 row-start-3 flex justify-end items-end">
-            <div className="bg-gradient-to-br from-white via-gray-700 to-white w-[95%] h-[90%] rounded-[10%] rounded-br-[3px]"/>
-          </div>
-          {/* Column Three END */}
-
-        </div>
-
-
-        {/* Background Grid */}
-        <div className="col-start-1 row-start-1 flex justify-center items-center">
-          <div className="w-[99.5%] h-[99.1%] shadow-[0_0_3rem_0.1em_rgba(35,35,35,1)] outline-[2px] outline-gray-600 rounded-[2px]">
-            <div className="grid w-full h-full">
-
-              {/* Row One */}
-              <MainMenuGrid rowName="One"/>
-              {/* Row One */}
-
-              {/* Row Two */}
-              <MainMenuGrid rowName="Two" />
-              {/* Row Two */}
-
-              {/* Row Three */}
-              <MainMenuGrid rowName="Three" />
-              {/* Row Three */}
-
-            </div>
+          <div
+            className="col-start-4 row-start-1"
+            onMouseEnter={() => setHoveringButton(true)}
+            onMouseLeave={() => setHoveringButton(false)}
+          >
+            <HomeMenuButtons Type="REPO" />
           </div>
         </div>
-        {/* Background Grid */}
 
+        <MouseFollowEffect mousePos={mousePos} isHovering={isHovering} windowDimensions={windowDimensions} hoveringEnter={false} hoveringButton={hoveringButton} />
 
-        <div className="col-start-1 row-start-1 w-full h-full">
-          {/* Home Page START */}
-          <div className="w-full h-full">
-
-            <ApplicationButton />
-
-          </div>
-          {/* Home Page END */}
-        </div>
       </div>
-
-
-      <div className="text-end w-full">
-        <p className="mr-[7%]">191621529884337911328</p>
-      </div>
-
     </div>
-  );
+  )
 }
