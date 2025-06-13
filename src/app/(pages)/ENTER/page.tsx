@@ -1,14 +1,11 @@
 'use client'
 
-import HomeMenuButtons from '@/app/Components/HomeMenuButtons';
-import MouseFollowEffect from '@/app/Components/MouseFollowEffect';
-import { useRouter } from 'next/navigation';
+import HomeMenuButtons from '@/app/Components/HomeMenuButtons'
+import MouseFollowEffect from '@/app/Components/MouseFollowEffect'
 import React, { useEffect, useRef, useState } from 'react'
 
 export default function Home()
 {
-  const router = useRouter();
-
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [windowDimensions, setWindowDimensions] = useState({ width: 0, height: 0 });
@@ -55,51 +52,53 @@ export default function Home()
   },[])
 
   return (
-    <div className="w-full h-full flex items-center justify-center">
-      <div
-        className="w-[99.5%] h-[99%] grid overflow-hidden relative cursor-none"
-        ref={divRef}
-        onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <div className="grid gap-[100px] justify-center items-center">
-          <div
-            className="col-start-1 row-start-1"
-            onMouseEnter={() => setHoveringButton(true)}
-            onMouseLeave={() => setHoveringButton(false)}
-          >
-            <HomeMenuButtons Type="PROJECTS" />
+    <>
+      <div className="w-full h-full flex items-center justify-center">
+        <div
+          className="w-[99.5%] h-[99%] grid overflow-hidden relative cursor-none"
+          ref={divRef}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="grid gap-[100px] justify-center items-center">
+            <div
+              className="col-start-1 row-start-1"
+              onMouseEnter={() => setHoveringButton(true)}
+              onMouseLeave={() => setHoveringButton(false)}
+            >
+              <HomeMenuButtons Type="PROJECTS" />
+            </div>
+
+            <div
+              className="col-start-2 row-start-1"
+              onMouseEnter={() => setHoveringButton(true)}
+              onMouseLeave={() => setHoveringButton(false)}
+            >
+              <HomeMenuButtons Type="ABOUT" />
+            </div>
+
+            <div
+              className="col-start-3 row-start-1"
+              onMouseEnter={() => setHoveringButton(true)}
+              onMouseLeave={() => setHoveringButton(false)}
+            >
+              <HomeMenuButtons Type="CONTACT" />
+            </div>
+
+            <div
+              className="col-start-4 row-start-1"
+              onMouseEnter={() => setHoveringButton(true)}
+              onMouseLeave={() => setHoveringButton(false)}
+            >
+              <HomeMenuButtons Type="REPO" />
+            </div>
           </div>
 
-          <div
-            className="col-start-2 row-start-1"
-            onMouseEnter={() => setHoveringButton(true)}
-            onMouseLeave={() => setHoveringButton(false)}
-          >
-            <HomeMenuButtons Type="ABOUT" />
-          </div>
+          <MouseFollowEffect mousePos={mousePos} isHovering={isHovering} windowDimensions={windowDimensions} hoveringEnter={false} hoveringButton={hoveringButton} />
 
-          <div
-            className="col-start-3 row-start-1"
-            onMouseEnter={() => setHoveringButton(true)}
-            onMouseLeave={() => setHoveringButton(false)}
-          >
-            <HomeMenuButtons Type="CONTACT" />
-          </div>
-
-          <div
-            className="col-start-4 row-start-1"
-            onMouseEnter={() => setHoveringButton(true)}
-            onMouseLeave={() => setHoveringButton(false)}
-          >
-            <HomeMenuButtons Type="REPO" />
-          </div>
         </div>
-
-        <MouseFollowEffect mousePos={mousePos} isHovering={isHovering} windowDimensions={windowDimensions} hoveringEnter={false} hoveringButton={hoveringButton} />
-
       </div>
-    </div>
+    </>
   )
 }
