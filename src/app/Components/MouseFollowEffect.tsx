@@ -19,7 +19,7 @@ const MouseFollowEffect = ({mousePos, isHovering, windowDimensions, hoveringEnte
       className={`absolute grid pointer-events-none transition-opacity duration-600 ${isHovering ? "opacity-100" : "opacity-0"}`}
       style={{ left: mousePos.x - (windowDimensions.width + 75), top: mousePos.y - (windowDimensions.height + 75), transform: "translate(0, 0)" }}
     >
-      {/* Main Square */}
+      {/* Main Circle */}
       <div
         className="w-[50px] h-[50px] col-start-2 row-start-2 p-[2px] pr-[1px] pb-[1px] rounded-tl-full"
       >
@@ -57,7 +57,7 @@ const MouseFollowEffect = ({mousePos, isHovering, windowDimensions, hoveringEnte
           ${hoveringEnter || hoveringButton ? "bg-green-500" : "bg-gray-50"}
         `}/>
       </div>
-      {/* Main Square */}
+      {/* Main Circle */}
 
 
       {/* Left/Right Lines */}
