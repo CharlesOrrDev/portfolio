@@ -66,7 +66,7 @@ const EnterButton = () =>
         onMouseEnter={() => setHoveringEnter(true)}
         onMouseLeave={() => setHoveringEnter(false)}
         onClick={() => router.push(`/ENTER`)}
-        className={`w-full h-[20%] cursor-none text-4xl text-center z-50 px-[60px]
+        className={`w-full h-[20%] cursor-none text-4xl text-center px-[60px]
           ${hoveringEnter ? "bg-gradient-to-r from-white via-gray-400 to-white bg-clip-text text-5xl text-transparent ease-in-out duration-500" : "text-gray-400 ease-in-out duration-500"}
         `}
       >

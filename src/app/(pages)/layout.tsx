@@ -8,8 +8,14 @@ const Layout = ({ children }: { children: React.ReactNode }) =>
   return (
     <div className="h-[100vh] bg-gray-950 text-white flex flex-col justify-center items-center font-[CalSans] inset-shadow-[0_0_5rem_0.1em_rgba(30,30,30,1)]">
 
-      <div className="text-start w-full">
-        <p className="ml-[7%]">191621529884337911328</p>
+      <div className="grid w-[86%]">
+        <div className="text-start w-full col-start-1 row-start-1">
+          <p>191621529884337911328</p>
+        </div>
+
+        <div className="text-end w-full col-start-2 row-start-1">
+          <button className="cursor-pointer hover:text-green-500">512011</button>
+        </div>
       </div>
 
 
@@ -93,8 +99,8 @@ const Layout = ({ children }: { children: React.ReactNode }) =>
       </div>
 
 
-      <div className="text-end w-full">
-        <p className="mr-[7%]">191621529884337911328</p>
+      <div className="text-end w-[86%]">
+        <p>191621529884337911328</p>
       </div>
 
     </div>
