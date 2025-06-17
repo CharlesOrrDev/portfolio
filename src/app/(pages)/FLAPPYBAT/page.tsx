@@ -1,3 +1,23 @@
+import React from 'react'
+
+const page = () =>
+{
+  return (
+    <>
+      <div className="m-0 p-0 flex justify-center items-center min-h-[100vh] bg-[linear-gradient(180deg,_#1a0b2e_0%,_#2d1b3d_50%,_#0f0519_100%)] overflow-hidden">
+        <div className="relative w-[400px] h-[600px] border-[3px] border-[#ff6b35] rounded-[10px] overflow-hidden bg-[linear-gradient(180deg,_#2d1b3d_0%,_#1a0b2e_100%)] shadow-[0_0_20px_rgba(255,107,53,0.5)]">
+
+          <canvas className="block bg-[linear-gradient(180deg,_#2d1b3d_0%,_#1a0b2e_100%)] w-[400px] h-[600px]"></canvas>
+
+          
+
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default page
 // <!DOCTYPE html>
 // <html lang="en">
 // <head>
@@ -5,34 +25,6 @@
 //     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 //     <title>Halloween Flappy Bat</title>
 //     <style>
-//         body {
-//             margin: 0;
-//             padding: 0;
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
-//             min-height: 100vh;
-//             background: linear-gradient(180deg, #1a0b2e 0%, #2d1b3d 50%, #0f0519 100%);
-//             font-family: 'Arial', sans-serif;
-//             overflow: hidden;
-//         }
-        
-//         #gameContainer {
-//             position: relative;
-//             width: 400px;
-//             height: 600px;
-//             border: 3px solid #ff6b35;
-//             border-radius: 10px;
-//             overflow: hidden;
-//             background: linear-gradient(180deg, #2d1b3d 0%, #1a0b2e 100%);
-//             box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
-//         }
-        
-//         canvas {
-//             display: block;
-//             background: linear-gradient(180deg, #2d1b3d 0%, #1a0b2e 100%);
-//         }
-        
 //         #ui {
 //             position: absolute;
 //             top: 20px;
@@ -112,7 +104,7 @@
 // </head>
 // <body>
 //     <div id="gameContainer">
-//         <canvas id="gameCanvas" width="400" height="600"></canvas>
+//         <canvas id="gameCanvas"></canvas>
         
 //         <div id="ui">
 //             <div>Score: <span id="score">0</span></div>
